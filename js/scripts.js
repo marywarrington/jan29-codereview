@@ -59,13 +59,16 @@ var multipleOfFifteen = function(userInput) {
 }
 
 var numberReplacer = function(userInput) {
-  // var userInput = parseInt("userInput");
+  var userInput = parseInt(userInput);
+  for (var i = 1; i < countUp(userInput); i++) {
+    if (i % 3 === 0) {
 
-  for (var i = 2; i < userInput; i+3) {
-    userInput = userInput.replace(i, 'ping');
+      userInput.replace([i], 'ping');
+    }
   }
   return userInput;
 }
+
 
 // var replacedNumber = userInput.replace(/[3]/gi, "ping");
 
