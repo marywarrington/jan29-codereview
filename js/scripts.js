@@ -1,3 +1,5 @@
+// Begin Business Logic
+
 var countUp = function(userInput) {
   var answer = "";
   for (var i = 1; i <= userInput; i++) {
@@ -69,7 +71,28 @@ var numberReplacer = function(userInput) {
     return userInput
   }
 }
+// End Business Logic
 
+// Begin User Interface Logic
+
+$(document).ready(function() {
+  $("form#pingpong").submit(function(event) {
+    var finalOutput = numberReplacer($('userInput').val());
+
+    $('#pingPongList ul').append("<li>" + finalOutput + "</li>");
+
+  // })
+  //
+  // for(var i=1;i<=parseInt($('#inputValue').val());i++) {
+  //    $('#resultList').append("<li>"+toPingPong(i)+"</li>");
+  //  }
+
+  $('#input').val('');
+  event.preventDefault();
+});
+
+
+// End User Interface Logic
 
 // var numberThree = "ping";
 // var answer = "";
