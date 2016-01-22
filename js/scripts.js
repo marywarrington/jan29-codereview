@@ -59,18 +59,16 @@ var multipleOfFifteen = function(userInput) {
 }
 
 var numberReplacer = function(userInput) {
-  var answer = "";
-  for (var i = 1; i <= userInput; i++) {
-    if (multipleOfThree) {
-      answer = "ping" + ", "
-    } else {
-    answer = answer + i + ", ";
+  if (userInput % 15 === 0) {
+    return "pingpong";
+  } else if (userInput % 5 === 0) {
+    return "pong";
+  } else if (userInput %3 === 0) {
+    return "ping";
+  } else {
+    return userInput
   }
-  }
-  answer = answer.slice(0, answer.length-1);
-  return answer;
 }
-
 
 
 // var numberThree = "ping";

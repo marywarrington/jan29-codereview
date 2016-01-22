@@ -50,10 +50,16 @@ describe('multipleOfFifteen', function () {
 });
 
 describe('numberReplacer', function() {
-  it("will replace a single instance of a 3 with 'ping''", function() {
-    expect(numberReplacer("5")).to.equal("1, 2, ping, 4, 5");
+  it("will replace a 3 with ping", function() {
+    expect(numberReplacer("3")).to.equal("ping");
   });
-  it("will replace multiples of 3 with 'ping''", function() {
-    expect(numberReplacer("6")).to.equal("1, 2, ping, 4, 5, ping");
+  it("will replace a 5 with pong", function() {
+    expect(numberReplacer("5")).to.equal("pong");
+  });
+  it("will replace a 15 with pingpong", function() {
+    expect(numberReplacer("15")).to.equal("pingpong");
+  });
+  it("will leave other numbers (not 3,5,15) as is", function() {
+    expect(numberReplacer("4")).to.equal("4");
   });
 });
