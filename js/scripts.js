@@ -22,3 +22,11 @@ var multipleOfFive = function(userInput) {
     return false
   }
 }
+
+var multipleOfFifteen = function(userInput) {
+  if (userInput % 15 === 0) {
+    return true
+  } else {
+    return false
+  }
+}
