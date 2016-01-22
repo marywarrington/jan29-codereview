@@ -78,9 +78,8 @@ var numberReplacer = function(userInput) {
 $(document).ready(function() {
   $("#pingPong").submit(function(event) {
     event.preventDefault();
-
     $("#pingPongResults").show();
-    // $("#pingPongList").empty();
+    $("#pingPongList").empty();
     for (var i=1;i<=parseInt($("#userInput").val());i++) {
       $("#pingPongList").append("<li>" + numberReplacer(i) + "</li>");
     }
