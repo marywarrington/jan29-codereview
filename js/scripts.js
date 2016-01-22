@@ -25,6 +25,15 @@ var countUpFive = function(userInput) {
   return answer;
 }
 
+var countUpFifteen = function(userInput) {
+  var answer = ""
+  for (var i = 0; i <= userInput; i += 15) {
+    answer = answer + i + ",";
+  }
+  answer = answer.slice(2, answer.length-1);
+  return answer;
+}
+
 var multipleOfThree = function(userInput) {
   if (userInput % 3 === 0) {
     return true
