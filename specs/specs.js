@@ -35,4 +35,7 @@ describe('numberReplacer', function() {
   it("will replace a single instance of a 3 with 'ping''", function() {
     expect(numberReplacer("1, 3, 5")).to.equal("1, ping, 5");
   });
+  it("will replace multiples of 3 with 'ping''", function() {
+    expect(numberReplacer("1, 3, 5, 6")).to.equal("1, ping, 5, ping");
+  });
 });
