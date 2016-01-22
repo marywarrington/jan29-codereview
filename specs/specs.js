@@ -12,3 +12,12 @@ describe('multipleOfThree', function () {
     expect(multipleOfThree("7")).to.equal(false);
   });
 });
+
+describe('multipleOfFive', function () {
+  it("returns true if a number is a multiple of 5", function() {
+    expect(multipleOfFive("10")).to.equal(true);
+  });
+  it("returns false if a number is not a multiple of 5", function() {
+    expect(multipleOfFive("11")).to.equal(false);
+  });
+});
