@@ -14,3 +14,11 @@ var multipleOfThree = function(userInput) {
     return false
   }
 }
+
+var multipleOfFive = function(userInput) {
+  if (userInput % 5 === 0) {
+    return true
+  } else {
+    return false
+  }
+}
