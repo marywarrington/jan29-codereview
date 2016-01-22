@@ -76,69 +76,13 @@ var numberReplacer = function(userInput) {
 // Begin User Interface Logic
 
 $(document).ready(function() {
-  $("form#pingpong").submit(function(event) {
-    var finalOutput = numberReplacer($('userInput').val());
+  $("#pingPong").submit(function(event) {
+    event.preventDefault();
 
-    $('#pingPongList ul').append("<li>" + finalOutput + "</li>");
-
-  // })
-  //
-  // for(var i=1;i<=parseInt($('#inputValue').val());i++) {
-  //    $('#resultList').append("<li>"+toPingPong(i)+"</li>");
-  //  }
-
-  $('#input').val('');
-  event.preventDefault();
+    $("#pingPongResults").show();
+    // $("#pingPongList").empty();
+    for (var i=1;i<=parseInt($("#userInput").val());i++) {
+      $("#pingPongList").append("<li>" + numberReplacer(i) + "</li>");
+    }
+  })
 });
-
-
-// End User Interface Logic
-
-// var numberThree = "ping";
-// var answer = "";
-// for (var i = 1; i <= userInput; i++) {
-//   for (var i = 1; i <= userInput; i += 3) {
-//     answer = "ping" + ",";
-//   }
-//   answer = answer + i + ",";
-// }
-// answer = answer.slice(0, answer.length-1);
-// return answer;
-// }
-
-//   var userInput = parseInt(userInput);
-//   for (var i = 1; i < countUp(userInput).length; i++) {
-//     if (i % 3 === 0) {
-//
-//       countUp(i).replace([i], 'ping');
-//     }
-//   }
-//   return userInput;
-// }
-//
-
-// var replacedNumber = userInput.replace(/[3]/gi, "ping");
-
-
-//   for (var i = 1; i < userInput; i++) {
-//     for(userInput.indexOf(function(multipleOfThree))) {
-//       userInput = userInput.replace(multipleOfThree[i], 'ping');
-//     });
-//    return userInput;
-// };
-
-// var hasVowel = function(userInput) {
-//   var vowels = ['a', 'e', 'i', 'o', 'u'];
-//   for (var index = 0; index < vowels.length; index++) {
-//     while(userInput.indexOf(vowels[index]) >= 0) {
-//       userInput = userInput.replace(vowels[index], '-');
-//     }
-//   } return userInput;
-//
-// };
-
-
-//   var replacedNumber = userInput.replace(multipleOfThree, "ping");
-//   return replacedNumber;
-// }
-//
