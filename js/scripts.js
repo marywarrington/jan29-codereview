@@ -1,7 +1,7 @@
 var countUp = function(userInput) {
   var answer = ""
   for (var i = 1; i <= userInput; i++) {
-    answer = answer + i + ","
+    answer = answer + i + ",";
   }
   answer = answer.slice(0, answer.length-1);
   return answer;
@@ -32,9 +32,15 @@ var multipleOfFifteen = function(userInput) {
 }
 
 var numberReplacer = function(userInput) {
-    var replacedNumber = userInput.replace(/[3]/gi, "ping");
-  return replacedNumber;
+  // var userInput = parseInt("userInput");
+
+  for (var i = 2; i < userInput; i+3) {
+    userInput = userInput.replace(i, 'ping');
+  }
+  return userInput;
 }
+
+// var replacedNumber = userInput.replace(/[3]/gi, "ping");
 
 
 //   for (var i = 1; i < userInput; i++) {

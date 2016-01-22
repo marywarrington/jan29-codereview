@@ -4,6 +4,12 @@ describe('countUp', function() {
   });
 });
 
+describe('countUpThree', function() {
+  it("returns a count from 1 to the given number by 3", function() {
+    expect(countUp("15")).to.equal("3,6,9,12,15");
+  });
+});
+
 describe('multipleOfThree', function () {
   it("returns true if a number is a multiple of 3", function() {
     expect(multipleOfThree("6")).to.equal(true);
