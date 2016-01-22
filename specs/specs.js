@@ -30,3 +30,9 @@ describe('multipleOfFifteen', function () {
     expect(multipleOfFifteen("31")).to.equal(false);
   });
 });
+
+describe('numberReplacer', function() {
+  it("replaces any multiple of 3 with 'ping'", function() {
+    expect(numberReplacer("1, 3, 5")).to.equal("1, ping, 5");
+  });
+});
