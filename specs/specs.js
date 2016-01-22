@@ -21,3 +21,12 @@ describe('multipleOfFive', function () {
     expect(multipleOfFive("11")).to.equal(false);
   });
 });
+
+describe('multipleOfFifteen', function () {
+  it("returns true if a number is a multiple of 15", function() {
+    expect(multipleOfFifteen("30")).to.equal(true);
+  });
+  it("returns false if a number is not a multiple of 15", function() {
+    expect(multipleOfFifteen("31")).to.equal(false);
+  });
+});
