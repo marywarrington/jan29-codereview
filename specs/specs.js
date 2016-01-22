@@ -6,7 +6,7 @@ describe('countUp', function() {
 
 describe('countUpThree', function() {
   it("returns a count from 1 to the given number by 3", function() {
-    expect(countUp("15")).to.equal("3,6,9,12,15");
+    expect(countUpThree("15")).to.equal("3,6,9,12,15");
   });
 });
 

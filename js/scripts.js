@@ -7,6 +7,15 @@ var countUp = function(userInput) {
   return answer;
 }
 
+var countUpThree = function(userInput) {
+  var answer = ""
+  for (var i = 0; i <= userInput; i += 3) {
+    answer = answer + i + ",";
+  }
+  answer = answer.slice(2, answer.length-1);
+  return answer;
+}
+
 var multipleOfThree = function(userInput) {
   if (userInput % 3 === 0) {
     return true
