@@ -30,3 +30,32 @@ var multipleOfFifteen = function(userInput) {
     return false
   }
 }
+
+var numberReplacer = function(userInput) {
+    var replacedNumber = userInput.replace(/[3]/gi, "ping");
+  return replacedNumber;
+}
+
+
+//   for (var i = 1; i < userInput; i++) {
+//     for(userInput.indexOf(function(multipleOfThree))) {
+//       userInput = userInput.replace(multipleOfThree[i], 'ping');
+//     });
+//    return userInput;
+// };
+
+// var hasVowel = function(userInput) {
+//   var vowels = ['a', 'e', 'i', 'o', 'u'];
+//   for (var index = 0; index < vowels.length; index++) {
+//     while(userInput.indexOf(vowels[index]) >= 0) {
+//       userInput = userInput.replace(vowels[index], '-');
+//     }
+//   } return userInput;
+//
+// };
+
+
+//   var replacedNumber = userInput.replace(multipleOfThree, "ping");
+//   return replacedNumber;
+// }
+//
