@@ -21,9 +21,9 @@ Pizza.prototype.toppingsAdded = function() {
   return this.toppings.length;
 }
 
-// Pizza.prototype.toppingsPrice = function(toppings) {
-//   var toppings = [this.toppings];
-//   var toppingsAdds = 2*(toppings.length);
-//
-//   return toppingsAdds;
-// }
+Pizza.prototype.toppingsPrice = function() {
+  var toppings = [this.toppings];
+  var toppingsAdds = 2*(toppings.length);
+
+  return toppingsAdds;
+}

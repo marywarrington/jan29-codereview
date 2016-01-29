@@ -22,10 +22,10 @@ describe('Pizza', function () {
     var newPizza = new Pizza(1, 'small', ['sausage', 'pineapple', 'hazelnuts']);
     expect(newPizza.toppingsAdded('sausage', 'pineapple', 'hazelnuts')).to.equal(3);
   });
-  // it("adds $2 for one topping added", function() {
-  //   var newPizza = new Pizza(1, 'small', 'sausage');
-  //   expect(newPizza.toppingsPrice()).to.equal(2);
-  // });
+  it("adds $2 for one topping added", function() {
+    var newPizza = new Pizza(1, 'small', 'sausage');
+    expect(newPizza.toppingsPrice()).to.equal(2);
+  });
   // it("adds $4 for two toppings added", function() {
   //   var newPizza = new Pizza(1, 'small', ['sausage', 'extra cheese', 'brussels sprouts']);
   //   expect(newPizza.toppingsPrice()).to.equal(4);
