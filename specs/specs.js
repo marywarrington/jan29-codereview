@@ -40,16 +40,11 @@ describe('Pizza', function () {
     expect(testPizza.quantity).to.equal(5);
   });
   it("returns the price of a single pizza", function() {
-    var testPizza = new Pizza(1, 'medium', ['sausage', 'pineapple']);
-    expect(testPizza.pizzaPrice()).to.equal(12);
+    var testPizza = new Pizza(1, 'large', ['sausage', 'pineapple']);
+    expect(testPizza.pizzaPrice()).to.equal(14);
   });
-
-  // it("returns a doubled price for two pizzas ordered", function() {
-  //   var testPizza = new Pizza(2);
-  //   expect(testPizza.quantityPrice).to.equal(10);
-  // });
-  // it("returns the total price of the pizza", function() {
-  //   var testPizza = new Pizza(1, 'small', ['sausage']);
-  //   expect(testPizza.totalPrice()).to.equal(10);
-  // });
+  it("returns the price for n number of pizzas ordered", function() {
+    var testPizza = new Pizza(3, 'large', ['sausage', 'pineapple']);
+    expect(testPizza.quantityPrice()).to.equal(42);
+  });
 });

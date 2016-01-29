@@ -15,11 +15,6 @@ Pizza.prototype.sizePrice = function() {
 }
 
 Pizza.prototype.toppingsPrice = function() {
-  // var toppings = this.toppings;
-  // Pizza.toppings.push(selected toppings);
-  // for (var i = 0; i < arguments.length; i++ ) {
-  // this.toppings.push(arguments[i]);
-  // }
   return this.toppings.length * 2;
 }
 
@@ -27,9 +22,9 @@ Pizza.prototype.pizzaPrice = function() {
   return 5 + this.sizePrice() + this.toppingsPrice();
 }
 
-// Pizza.prototype.quantityPrice = function() {
-//   return this.quantity * this.pizzaPrice();
-// }
+Pizza.prototype.quantityPrice = function() {
+  return this.quantity * this.pizzaPrice();
+}
 
 $(document).ready(function() {
 //if a topping is selected, add it to the toppings array
