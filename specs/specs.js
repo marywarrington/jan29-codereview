@@ -48,3 +48,9 @@ describe('Pizza', function () {
     expect(testPizza.quantityPrice()).to.equal(42);
   });
 });
+
+describe('Order', function() {
+  it("puts all pizzas ordered in an array", function() {
+    var testOrder = new Order()
+  })
+});

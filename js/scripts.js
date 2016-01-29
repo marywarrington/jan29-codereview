@@ -26,6 +26,13 @@ Pizza.prototype.quantityPrice = function() {
   return this.quantity * this.pizzaPrice();
 }
 
+function Order() {
+  this.pizza = new Pizza();
+}
+
+Order.prototype.orderPrice = function() {
+  return Pizza.quantityPrice.
+}
+
 $(document).ready(function() {
-//if a topping is selected, add it to the toppings array
 })
