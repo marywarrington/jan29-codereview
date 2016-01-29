@@ -1,12 +1,12 @@
-# January 22 Epicodus Code Review: Ping Pong
+# January 29 Epicodus Code Review:
 
-#### This site returns a list of numbers with multiples of 3, 5, and 15 displayed as "ping, pong, pingpong" respectively. 1.22.2016
+#### Description, Date
 
 #### Mary Warrington
 
 ## Description
 
-This site takes a number input from the user and returns a list of all whole numbers up to the given input. Each multiple of three is displayed as "ping", each multiple of five is displayed as "pong", and each multiple of fifteen is displayed as "pingpong".
+blank
 
 ## Setup/Installation Requirements
 
@@ -15,7 +15,7 @@ This site takes a number input from the user and returns a list of all whole num
 
 ## Known Bugs
 
-Will return nothing for NaN inputs.
+blank
 
 ## Support and contact details
 
