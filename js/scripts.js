@@ -1,4 +1,4 @@
-function Pizza(quantity, size, toppings) {
+function Pizza(quantity, size) {
   this.quantity = quantity;
   this.size = size;
   this.toppings = [];
@@ -14,16 +14,9 @@ Pizza.prototype.sizePrice = function() {
   return sizeAdds;
 }
 
-Pizza.prototype.toppingsAdded = function() {
+Pizza.prototype.toppingsPrice = function() {
   for (var i = 0; i < arguments.length; i++ ) {
   this.toppings.push(arguments[i]);
   }
-  return this.toppings.length;
-}
-
-Pizza.prototype.toppingsPrice = function() {
-  var toppings = [this.toppings];
-  var toppingsAdds = 2*(toppings.length);
-
-  return toppingsAdds;
+  return this.toppings.length * 2;
 }

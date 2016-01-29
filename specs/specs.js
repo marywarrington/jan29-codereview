@@ -18,16 +18,20 @@ describe('Pizza', function () {
     var newPizza = new Pizza(1, 'large');
     expect(newPizza.sizePrice()).to.equal(5);
   });
-  it("returns the number of toppings a user has selected", function() {
-    var newPizza = new Pizza(1, 'small', ['sausage', 'pineapple', 'hazelnuts']);
-    expect(newPizza.toppingsAdded('sausage', 'pineapple', 'hazelnuts')).to.equal(3);
-  });
-  it("adds $2 for one topping added", function() {
-    var newPizza = new Pizza(1, 'small', 'sausage');
-    expect(newPizza.toppingsPrice()).to.equal(2);
-  });
-  // it("adds $4 for two toppings added", function() {
-  //   var newPizza = new Pizza(1, 'small', ['sausage', 'extra cheese', 'brussels sprouts']);
-  //   expect(newPizza.toppingsPrice()).to.equal(4);
+  // it("returns the number of toppings a user has selected", function() {
+  //   var newPizza = new Pizza(1, 'small', ['sausage', 'pineapple', 'hazelnuts']);
+  //   expect(newPizza.toppingsAdded('sausage', 'pineapple', 'hazelnuts', "topping4")).to.equal(4);
   // });
+  it("adds $2 for one topping added", function() {
+    var newPizza = new Pizza(1, 'small', ['sausage']);
+    expect(newPizza.toppingsPrice('sausage')).to.equal(2);
+  });
+  it("adds $4 for two toppings added", function() {
+    var newPizza = new Pizza(1, 'small', ['sausage', 'extra cheese']);
+    expect(newPizza.toppingsPrice('sausage', 'extra cheese')).to.equal(4);
+  });
+  it("adds $6 for three toppings added", function() {
+    var newPizza = new Pizza(1, 'small', ['sausage', 'extra cheese', 'pineapple']);
+    expect(newPizza.toppingsPrice('sausage', 'extra cheese', 'pineapple')).to.equal(6);
+  });
 });
