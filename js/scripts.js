@@ -1,75 +1,19 @@
 // Begin Business Logic
 
-var countUp = function(userInput) {
-  var answer = "";
-  for (var i = 1; i <= userInput; i++) {
-    answer = answer + i + ",";
+var pingPong = function(number) {
+  var results = [];
+  for (var i=1;i<=number;i++) {
+    if (i % 15 === 0) {
+      results.push("pingpong");
+    } else if (i % 5 === 0) {
+      results.push("pong");
+    } else if (i % 3 === 0) {
+      results.push("ping");
+    } else {
+    results.push(i);
+    }
   }
-  answer = answer.slice(0, answer.length-1);
-  return answer;
-}
-
-var countUpThree = function(userInput) {
-  var answer = "";
-  for (var i = 0; i <= userInput; i += 3) {
-    answer = answer + i + ",";
-  }
-  answer = answer.slice(2, answer.length-1);
-  return answer;
-}
-
-var countUpFive = function(userInput) {
-  var answer = "";
-  for (var i = 0; i <= userInput; i += 5) {
-    answer = answer + i + ",";
-  }
-  answer = answer.slice(2, answer.length-1);
-  return answer;
-}
-
-var countUpFifteen = function(userInput) {
-  var answer = ""
-  for (var i = 0; i <= userInput; i += 15) {
-    answer = answer + i + ",";
-  }
-  answer = answer.slice(2, answer.length-1);
-  return answer;
-}
-
-var multipleOfThree = function(userInput) {
-  if (userInput % 3 === 0) {
-    return "ping";
-  } else {
-    return userInput;
-  }
-}
-
-var multipleOfFive = function(userInput) {
-  if (userInput % 5 === 0) {
-    return "pong";
-  } else {
-    return userInput;
-  }
-}
-
-var multipleOfFifteen = function(userInput) {
-  if (userInput % 15 === 0) {
-    return "pingpong";
-  } else {
-    return userInput;
-  }
-}
-
-var numberReplacer = function(userInput) {
-  if (userInput % 15 === 0) {
-    return "pingpong";
-  } else if (userInput % 5 === 0) {
-    return "pong";
-  } else if (userInput %3 === 0) {
-    return "ping";
-  } else {
-    return userInput
-  }
+  return results;
 }
 // End Business Logic
 
@@ -78,10 +22,17 @@ var numberReplacer = function(userInput) {
 $(document).ready(function() {
   $("#pingPong").submit(function(event) {
     event.preventDefault();
+
+    var number = parseInt($("#userInput").val());
+    var results = pingPong(number);
+
     $("#pingPongResults").show();
     $("#pingPongList").empty();
-    for (var i=1;i<=parseInt($("#userInput").val());i++) {
-      $("#pingPongList").append("<li>" + numberReplacer(i) + "</li>");
+
+    for (var i=0;i<results.length;i++) {
+      $("#pingPongList").append("<li>" + results[i] + "</li>");
     }
-  })
+  });
 });
+
+// End User Interface Logic
