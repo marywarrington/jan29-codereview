@@ -1,12 +1,12 @@
 # January 29 Epicodus Code Review:
 
-#### Description, Date
+#### This site takes a pizza order from a user and returns their pizza order price, 1.29.2016
 
 #### Mary Warrington
 
 ## Description
 
-blank
+This site lets the user select quantity, size, and toppings for their pizza. When they submit, they are then presented with the total price of their order.
 
 ## Setup/Installation Requirements
 
@@ -15,7 +15,7 @@ blank
 
 ## Known Bugs
 
-blank
+Currently does not return the correct price, or store more than one toppings value.
 
 ## Support and contact details
 

@@ -104,34 +104,27 @@ $(document).ready(function() {
                                     '</div>' +
                                   '</div>' +
                                 '</div>');
-  });
-  $('form#order').submit(function(event) {
-    var orderPrice = 0;
-    var quantity = $('select#quantity').val();
-    var size = $('select#size').val();
-
-    var toppings = [];
-    toppings.push($('input[name=toppings]:checked').val());
-
-    function checkboxes() {
-      var checkboxes = $('input[name=toppings]:checked');
-      var checkboxesValue = [];
-      $(checkboxes).each(function() {
-        checkboxesValue.push(value);
-      });
-      var str = checkboxesValue.join(",");
-    }
-
-    var newPizza = new Pizza(quantity, size, toppings);
-    var pizzaPrice = newPizza.quantityPrice();
-
-    var pizzaOrder = [];
-    pizzaOrder.push(newPizza);
-
-    pizzaOrder.forEach(function(pizza) {
-      $('ul#pizzasOrdered').append('<li>' + newPizza.quantity + ' ' + newPizza.size + ' ' + newPizza.toppings + ' $' + pizzaPrice + '</li>');
-      return orderPrice += pizzaPrice;
     });
+    $('form#order').submit(function(event) {
+      var orderPrice = 0;
+      var quantity = $('select#quantity').val();
+      var size = $('select#size').val();
+
+      var toppings = [];
+      toppings.push($('input[name=toppings]:checked').val());
+
+  // something with ('checkboxes:checked').length;
+
+      var newPizza = new Pizza(quantity, size, toppings);
+      var pizzaPrice = newPizza.quantityPrice();
+
+      var pizzaOrder = [];
+      pizzaOrder.push(newPizza);
+
+      pizzaOrder.forEach(function(pizza) {
+        $('ul#pizzasOrdered').append('<li>' + newPizza.quantity + ' ' + newPizza.size + ' ' + pizza.toppings + ' $' + pizzaPrice + '</li>');
+        return orderPrice += pizzaPrice;
+      });
 
 //     for (var i=0;i<=pizzaOrder.length;i++) {
 // //
@@ -148,17 +141,23 @@ $(document).ready(function() {
 });
 
 
-// $(".newAddress").each(function() {
-//    var inputtedStreet = $(this).find("input.street").val();
-//    var inputtedCity = $(this).find("input.city").val();
-//    var inputtedState = $(this).find("input.state").val();
-//    var completeAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
-//    newContact.address.push(completeAddress.fullAddress());
-
 
 
     // var toppingsArray = [];
     // var toppingsInArray = toppingsArray.push(this.toppings);
 
+
 //add together all pizza prices
 //display total price
+
+
+
+
+// function checkboxes() {
+//   var checkboxes = $('input[name=toppings]:checked');
+//   var checkboxesValue = [];
+//   $(checkboxes).each(function() {
+//     checkboxesValue.push(value);
+//   });
+//   var str = checkboxesValue.join(",");
+// }
