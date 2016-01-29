@@ -106,27 +106,54 @@ $(document).ready(function() {
                                 '</div>');
   });
   $('form#order').submit(function(event) {
+    var orderPrice = 0;
     var quantity = $('select#quantity').val();
     var size = $('select#size').val();
-    var toppings = $('input[name=toppings]:checked').val();
-    var newPizza = new Pizza(this.quantity, this.size, this.toppings);
+
+    var toppings = [];
+    toppings.push($('input[name=toppings]:checked').val());
+
+    function checkboxes() {
+      var checkboxes = $('input[name=toppings]:checked');
+      var checkboxesValue = [];
+      $(checkboxes).each(function() {
+        checkboxesValue.push(value);
+      });
+      var str = checkboxesValue.join(",");
+    }
+
+    var newPizza = new Pizza(quantity, size, toppings);
     var pizzaPrice = newPizza.quantityPrice();
 
     var pizzaOrder = [];
-
     pizzaOrder.push(newPizza);
-    pizzaOrder.forEach(function(pizza) {
-      $('ul#pizzasOrdered').append('<li>' + pizza.quantity + ' ' + pizza.size + ' ' + pizza.toppings + ' $' + pizzaPrice + '</li>');
-       return totalPrice += pizzaPrice;
-   });
 
-    $("span#totalPrice").text("Total: $" + totalPrice);
+    pizzaOrder.forEach(function(pizza) {
+      $('ul#pizzasOrdered').append('<li>' + newPizza.quantity + ' ' + newPizza.size + ' ' + newPizza.toppings + ' $' + pizzaPrice + '</li>');
+      return orderPrice += pizzaPrice;
+    });
+
+//     for (var i=0;i<=pizzaOrder.length;i++) {
+// //
+//       orderPrice += $(pizzaOrder[i];
+//
+//       return orderPrice;
+//     };
+
+    $("span#totalPrice").text("$" + orderPrice);
     $('div#results').show();
-    alert('alert');
 
     event.preventDefault();
   });
 });
+
+
+// $(".newAddress").each(function() {
+//    var inputtedStreet = $(this).find("input.street").val();
+//    var inputtedCity = $(this).find("input.city").val();
+//    var inputtedState = $(this).find("input.state").val();
+//    var completeAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
+//    newContact.address.push(completeAddress.fullAddress());
 
 
 
