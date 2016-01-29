@@ -44,27 +44,27 @@
             <label for="toppings">Toppings</label>
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="hazelnuts" value="hazelnuts">Hazelnuts
+                <input name="toppings" type="checkbox" id="hazelnuts" value="hazelnuts">Hazelnuts
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="extracheese" value="extracheese">Extra Cheese
+                <input name="toppings" type="checkbox" id="extracheese" value="extracheese">Extra Cheese
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="sausage" value="sausage">Sausage
+                <input name="toppings" type="checkbox" id="sausage" value="sausage">Sausage
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="brussels" value="brussels">Brussels Sprouts
+                <input name="toppings" type="checkbox" id="brussels" value="brussels">Brussels Sprouts
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="pineapple" value="pineapple">Pineapple
+                <input name="toppings" type="checkbox" id="pineapple" value="pineapple">Pineapple
               </label>
             </div>
           </div>
@@ -72,9 +72,9 @@
         <button type="button"class= "btn btn-primary" id="addPizza" name="button">Add Another Pizza</button>
         <button type="submit" class="btn btn-success" name="button">Submit</button>
       </form>
-      <div id="">
-        <ul id="">
-
+      <div id="results">
+        <h3>Thank you for your order! Your total price is <span id="totalPrice"></span>.</h3>
+        <ul id="pizzasOrdered">
         </ul>
       </div>
     </div>

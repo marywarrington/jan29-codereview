@@ -105,7 +105,33 @@ $(document).ready(function() {
                                   '</div>' +
                                 '</div>');
   });
+  $('form#order').submit(function(event) {
+    var quantity = $('select#quantity').val();
+    var size = $('select#size').val();
+    var toppings = $('input[name=toppings]:checked').val();
+    var newPizza = new Pizza(this.quantity, this.size, this.toppings);
+    var pizzaPrice = newPizza.quantityPrice();
+
+    var pizzaOrder = [];
+
+    pizzaOrder.push(newPizza);
+    pizzaOrder.forEach(function(pizza) {
+      $('ul#pizzasOrdered').append('<li>' + pizza.quantity + ' ' + pizza.size + ' ' + pizza.toppings + ' $' + pizzaPrice + '</li>');
+       return totalPrice += pizzaPrice;
+   });
+
+    $("span#totalPrice").text("Total: $" + totalPrice);
+    $('div#results').show();
+    alert('alert');
+
+    event.preventDefault();
+  });
 });
-//   $('form#order').submit(function(event) {
-//
-// });
+
+
+
+    // var toppingsArray = [];
+    // var toppingsInArray = toppingsArray.push(this.toppings);
+
+//add together all pizza prices
+//display total price
