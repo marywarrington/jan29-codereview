@@ -1,10 +1,10 @@
 
 describe('Pizza', function () {
   it("will create an object Pizza with the following properties", function() {
-    var testPizza = new Pizza(1, 'medium', []);
+    var testPizza = new Pizza(1, 'medium', ['sausage', 'pineapple']);
     expect(testPizza.quantity).to.equal(1);
     expect(testPizza.size).to.equal('medium');
-    expect(testPizza.toppings).to.eql([]);
+    expect(testPizza.toppings).to.eql(['sausage', 'pineapple']);
   });
   it("adds $0 for a small pizza", function() {
     var testPizza = new Pizza(1, 'small');
@@ -24,7 +24,8 @@ describe('Pizza', function () {
   // });
   it("adds $2 for one topping added", function() {
     var testPizza = new Pizza(1, 'small', ['sausage']);
-    expect(testPizza.toppingsPrice('sausage')).to.equal(2);
+    var toppings = ['sausage'];
+    expect(testPizza.toppingsPrice()).to.equal(2);
   });
   it("adds $4 for two toppings added", function() {
     var testPizza = new Pizza(1, 'small', ['sausage', 'extra cheese']);
@@ -38,6 +39,15 @@ describe('Pizza', function () {
     var testPizza = new Pizza(5);
     expect(testPizza.quantity).to.equal(5);
   });
+  it("returns the price of a single pizza", function() {
+    var testPizza = new Pizza(1, 'medium', ['sausage', 'pineapple']);
+    expect(testPizza.pizzaPrice()).to.equal(12);
+  });
+
+  // it("returns a doubled price for two pizzas ordered", function() {
+  //   var testPizza = new Pizza(2);
+  //   expect(testPizza.quantityPrice).to.equal(10);
+  // });
   // it("returns the total price of the pizza", function() {
   //   var testPizza = new Pizza(1, 'small', ['sausage']);
   //   expect(testPizza.totalPrice()).to.equal(10);

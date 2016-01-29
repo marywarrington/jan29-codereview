@@ -1,7 +1,7 @@
-function Pizza(quantity, size) {
+function Pizza(quantity, size, toppings) {
   this.quantity = quantity;
   this.size = size;
-  this.toppings = [];
+  this.toppings = toppings;
 }
 
 Pizza.prototype.sizePrice = function() {
@@ -15,17 +15,22 @@ Pizza.prototype.sizePrice = function() {
 }
 
 Pizza.prototype.toppingsPrice = function() {
-  for (var i = 0; i < arguments.length; i++ ) {
-  this.toppings.push(arguments[i]);
-  }
-  var toppingsAdds = this.toppings.length * 2;
-  return toppingsAdds;
+  // var toppings = this.toppings;
+  // Pizza.toppings.push(selected toppings);
+  // for (var i = 0; i < arguments.length; i++ ) {
+  // this.toppings.push(arguments[i]);
+  // }
+  return this.toppings.length * 2;
 }
 
-// Pizza.prototype.quantity = function() {
-//   return this.quantity;
+Pizza.prototype.pizzaPrice = function() {
+  return 5 + this.sizePrice() + this.toppingsPrice();
+}
+
+// Pizza.prototype.quantityPrice = function() {
+//   return this.quantity * this.pizzaPrice();
 // }
 
-Pizza.prototype.totalPrice = function() {
-  return 5 + this.toppingsPrice() + this.sizePrice();
-}
+$(document).ready(function() {
+//if a topping is selected, add it to the toppings array
+})
