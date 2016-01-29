@@ -5,5 +5,8 @@ function Pizza(quantity, size, toppings) {
 }
 
 Pizza.prototype.price = function() {
-  return 5;
+  var price = 5;
+  if (this.size === "medium") {
+    return price + 3;
+  } else return price;
 }
