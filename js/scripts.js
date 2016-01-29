@@ -18,5 +18,14 @@ Pizza.prototype.toppingsPrice = function() {
   for (var i = 0; i < arguments.length; i++ ) {
   this.toppings.push(arguments[i]);
   }
-  return this.toppings.length * 2;
+  var toppingsAdds = this.toppings.length * 2;
+  return toppingsAdds;
+}
+
+// Pizza.prototype.quantity = function() {
+//   return this.quantity;
+// }
+
+Pizza.prototype.totalPrice = function() {
+  return 5 + this.toppingsPrice() + this.sizePrice();
 }
