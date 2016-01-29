@@ -6,12 +6,20 @@ describe('Pizza', function () {
     expect(newPizza.size).to.equal('medium');
     expect(newPizza.toppings).to.eql(["pineapple", "extra cheese", "sausage"]);
   });
-  it("sets the base price of a pizza at $5", function() {
+  it("adds $0 for a small pizza", function() {
     var newPizza = new Pizza(1, 'small');
-    expect (newPizza.price()).to.equal(5);
+    expect(newPizza.sizePrice()).to.equal(0);
   });
-  it("sets adds $3 for medium pizza, and $5 for large", function() {
+  it("adds $3 for a medium pizza", function() {
     var newPizza = new Pizza(1, 'medium');
-    expect (newPizza.price()).to.equal(8);
+    expect(newPizza.sizePrice()).to.equal(3);
+  });
+  it("adds $5 for a large pizza", function() {
+    var newPizza = new Pizza(1, 'large');
+    expect(newPizza.sizePrice()).to.equal(5);
+  });
+  it("adds $2 for one topping added", function() {
+    var newPizza = new Pizza (1, 'small', 'sausage');
+    expect(newPizza.toppingsPrice()).to.equal(2)
   });
 });
