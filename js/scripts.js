@@ -26,13 +26,27 @@ Pizza.prototype.quantityPrice = function() {
   return this.quantity * this.pizzaPrice();
 }
 
-function Order() {
-  this.pizza = new Pizza();
-}
+// function Order() {
+//   this.pizzas = []
+//   this.pizza = new Pizza();
+//   this.pizza.sizePrice();
+//   this.pizza.toppingsPrice();
+//   this.pizza.pizzaPrice();
+//   this.pizza.quantityPrice();
+//
+// }
+//
+// Order.prototype.pizzaArray = function() {
+//   this.pizzas.push(this.pizza);
+// }
+//
+// Order.prototype.orderPrice = function() {
+//   this.pizza.forEach()
+// }
 
-Order.prototype.orderPrice = function() {
-  return Pizza.quantityPrice.
-}
+
 
 $(document).ready(function() {
+
+
 })

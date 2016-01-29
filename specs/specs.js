@@ -22,16 +22,7 @@ describe('Pizza', function () {
   //   var testPizza = new Pizza(1, 'small', ['sausage', 'pineapple', 'hazelnuts']);
   //   expect(newPizza.toppingsAdded('sausage', 'pineapple', 'hazelnuts', "topping4")).to.equal(4);
   // });
-  it("adds $2 for one topping added", function() {
-    var testPizza = new Pizza(1, 'small', ['sausage']);
-    var toppings = ['sausage'];
-    expect(testPizza.toppingsPrice()).to.equal(2);
-  });
-  it("adds $4 for two toppings added", function() {
-    var testPizza = new Pizza(1, 'small', ['sausage', 'extra cheese']);
-    expect(testPizza.toppingsPrice('sausage', 'extra cheese')).to.equal(4);
-  });
-  it("adds $6 for three toppings added", function() {
+  it("adds $2 for each topping added", function() {
     var testPizza = new Pizza(1, 'small', ['sausage', 'extra cheese', 'pineapple']);
     expect(testPizza.toppingsPrice('sausage', 'extra cheese', 'pineapple')).to.equal(6);
   });
@@ -49,8 +40,9 @@ describe('Pizza', function () {
   });
 });
 
-describe('Order', function() {
-  it("puts all pizzas ordered in an array", function() {
-    var testOrder = new Order()
-  })
-});
+// describe('Order', function() {
+//   it("puts all pizzas ordered in an array", function() {
+//     var testOrder = new Order((1, 'small', ['sausage', 'pineapple']), (1, 'medium', ['hazelnuts']));
+//     expect(testOrder.orderPrice()).to.equal(19);
+//   })
+// });
