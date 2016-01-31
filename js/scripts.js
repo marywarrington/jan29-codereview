@@ -39,6 +39,7 @@ function Order(pizzas) {
 
 Order.prototype.orderPrice = function() {
   var orderTotal = 0;
+  var pizza = new Pizza(quantity, size, toppings);
   this.pizzas.forEach(function(pizza) {
     orderTotal += pizza.quantityPrice;
   });
@@ -114,7 +115,6 @@ $(document).ready(function() {
         return this.value;
       }).get();
 
-// BREAKS UNDER HERE
       // $(newPizza.toppings).forEach(function(toppings) {
       //   console.log(('toppings.checkbox:checked').val());
       // });
@@ -123,12 +123,11 @@ $(document).ready(function() {
       //   toppings.push($('toppings.checkbox:checked').val());
       // })
 
-// $('.checkbox:checked').size();
       var newPizza = new Pizza(quantity, size, toppings);
       var quantityPrice = newPizza.quantityPrice();
-      // var newOrder = new Order(this.pizza);
+      var newOrder = new Order(this.pizza);
+      var orderTotal = newOrder.orderTotal(this.quantityPrice);
 
-      // for each new pizza, add the price to the orderTotal!
 
       // orderCalc = function(quantityPrice) {
       //     var orderPrice = 0;
@@ -155,7 +154,7 @@ $(document).ready(function() {
 // //
 
 
-    $("span#totalPrice").text("$" + quantityPrice);
+    $("span#totalPrice").text("$" + orderTotal);
     $('div#results').show();
 
     event.preventDefault();
