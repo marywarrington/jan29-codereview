@@ -40,9 +40,14 @@ describe('Pizza', function () {
   });
 });
 
-// describe('Order', function() {
-//   it("puts all pizzas ordered in an array", function() {
-//     var testOrder = new Order((1, 'small', ['sausage', 'pineapple']), (1, 'medium', ['hazelnuts']));
-//     expect(testOrder.orderPrice()).to.equal(19);
-//   })
-// });
+describe('Order', function() {
+  // it("puts each pizza into an array", function() {
+  //   var testOrder = new Order(pizza);
+  //   expect(testOrder.pizzasArray()).to.equal([pizza1, pizza2]);
+  // });
+  it("returns the full order price", function() {
+    var testOrder = new Order(["pizza1"]);
+    var pizza1 = new Pizza(1, 'medium', ['sausage', 'pineapple']);
+    expect(testOrder.orderPrice()).to.equal(19);
+  });
+});
