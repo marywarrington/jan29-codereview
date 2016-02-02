@@ -30,21 +30,18 @@ Pizza.prototype.quantityPrice = function() {
 }
 
 
-function Order(pizzas) {
-  var pizzas = [];
-  this.pizza = new Pizza();
-  this.pizza.pizzaPrice();
-  this.pizza.quantityPrice();
-}
+// function Order(pizzas) {
+//   var pizzas = [];
+// }
 
-Order.prototype.orderPrice = function() {
-  var orderTotal = 0;
-  var pizza = new Pizza(quantity, size, toppings);
-  this.pizzas.forEach(function(pizza) {
-    orderTotal += pizza.quantityPrice;
-  });
-  this.orderTotal = orderTotal;
-}
+// Order.prototype.orderPrice = function() {
+//   var orderTotal = 0;
+//   var pizza = new Pizza(quantity, size, toppings);
+//   this.pizzas.forEach(function(pizza) {
+//     orderTotal += pizza.quantityPrice;
+//   });
+//   this.orderTotal = orderTotal;
+// }
 
 
 // Begin UI
@@ -109,8 +106,10 @@ $(document).ready(function() {
                                 '</div>');
     });
     $('form#order').submit(function(event) {
-      var quantity = $('select#quantity').val();
-      var size = $('select#size').val();
+      event.preventDefault();
+
+      var quantity = $('select#quantityInput').val();
+      var size = $('select#sizeInput').val();
       var toppings = $('input:checkbox[name=toppings]:checked').map(function() {
         return this.value;
       }).get();
@@ -125,8 +124,8 @@ $(document).ready(function() {
 
       var newPizza = new Pizza(quantity, size, toppings);
       var quantityPrice = newPizza.quantityPrice();
-      var newOrder = new Order(this.pizza);
-      var orderTotal = newOrder.orderTotal(this.quantityPrice);
+      // var newOrder = new Order(this.pizza);
+      // var orderTotal = newOrder.orderTotal(this.quantityPrice);
 
 
       // orderCalc = function(quantityPrice) {
@@ -154,10 +153,9 @@ $(document).ready(function() {
 // //
 
 
-    $("span#totalPrice").text("$" + orderTotal);
+    $("span#totalPrice").text("$" + quantityPrice);
     $('div#results').show();
 
-    event.preventDefault();
   });
 });
 
