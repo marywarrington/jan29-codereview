@@ -30,9 +30,9 @@ Pizza.prototype.quantityPrice = function() {
 }
 
 
-// function Order(pizzas) {
-//   var pizzas = [];
-// }
+function Order() {
+  var pizzas = [];
+}
 
 // Order.prototype.orderPrice = function() {
 //   var orderTotal = 0;
@@ -114,14 +114,6 @@ $(document).ready(function() {
         return this.value;
       }).get();
 
-      // $(newPizza.toppings).forEach(function(toppings) {
-      //   console.log(('toppings.checkbox:checked').val());
-      // });
-
-      // $('toppings.checkbox:checked').forEach(function() {
-      //   toppings.push($('toppings.checkbox:checked').val());
-      // })
-
       var newPizza = new Pizza(quantity, size, toppings);
       var quantityPrice = newPizza.quantityPrice();
       // var newOrder = new Order(this.pizza);
@@ -138,19 +130,6 @@ $(document).ready(function() {
 
 
 
-      // $(.newPizza).each(function() {
-      //   var newPizza = new Pizza(quantity, size, toppings);
-      //   var pizzaOrder = [];
-      //   pizzaOrder.push(newPizza.quantityPrice());
-      // })
-
-      // pizzaOrder.forEach(function(pizza) {
-      //   $('ul#pizzasOrdered').append('<li>' + newPizza.quantity + ' ' + newPizza.size + ' ' + pizza.toppings + ' $' + pizzaPrice + '</li>');
-      //   return orderPrice += pizzaPrice;
-      // });
-
-//     for (var i=0;i<=pizzaOrder.length;i++) {
-// //
 
 
     $("span#totalPrice").text("$" + quantityPrice);
@@ -158,25 +137,3 @@ $(document).ready(function() {
 
   });
 });
-
-
-
-
-    // var toppingsArray = [];
-    // var toppingsInArray = toppingsArray.push(this.toppings);
-
-
-//add together all pizza prices
-//display total price
-
-
-
-
-// function checkboxes() {
-//   var checkboxes = $('input[name=toppings]:checked');
-//   var checkboxesValue = [];
-//   $(checkboxes).each(function() {
-//     checkboxesValue.push(value);
-//   });
-//   var str = checkboxesValue.join(",");
-// }

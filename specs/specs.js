@@ -41,13 +41,13 @@ describe('Pizza', function () {
 });
 
 describe('Order', function() {
-  // it("puts each pizza into an array", function() {
-  //   var testOrder = new Order(pizza);
-  //   expect(testOrder.pizzasArray()).to.equal([pizza1, pizza2]);
-  // });
-  it("returns the full order price", function() {
-    var testOrder = new Order(["pizza1"]);
-    var pizza1 = new Pizza(1, 'medium', ['sausage', 'pineapple']);
-    expect(testOrder.orderPrice()).to.equal(19);
+  it("creates and empty array", function() {
+    var testOrder = new Order();
+    expect(testOrder.pizzas).to.eql();
   });
+//   it("returns the full order price", function() {
+//     var testOrder = new Order(["pizza1"]);
+//     var pizza1 = new Pizza(1, 'medium', ['sausage', 'pineapple']);
+//     expect(testOrder.orderPrice()).to.equal(19);
+//   });
 });
