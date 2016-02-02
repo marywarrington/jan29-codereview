@@ -29,25 +29,6 @@ Pizza.prototype.quantityPrice = function() {
   this.price = price;
 }
 
-
-function Order() {
-  var pizzas = [];
-}
-
-Order.prototype.addPizza = function(pizza) {
-  this.pizzas.push(pizza);
-}
-
-// Order.prototype.orderPrice = function() {
-//   var orderTotal = 0;
-//   var pizza = new Pizza(quantity, size, toppings);
-//   this.pizzas.forEach(function(pizza) {
-//     orderTotal += pizza.quantityPrice;
-//   });
-//   this.orderTotal = orderTotal;
-// }
-
-
 // Begin UI
 
 $(document).ready(function() {
@@ -120,21 +101,6 @@ $(document).ready(function() {
 
       var newPizza = new Pizza(quantity, size, toppings);
       var quantityPrice = newPizza.quantityPrice();
-      // var newOrder = new Order(this.pizza);
-      // var orderTotal = newOrder.orderTotal(this.quantityPrice);
-
-
-      // orderCalc = function(quantityPrice) {
-      //     var orderPrice = 0;
-      //     $(quantityPrice).each(function() {
-      //         orderPrice += Number($(this).text());
-      //     });
-      //     return orderPrice;
-      // }
-
-
-
-
 
     $("span#totalPrice").text("$" + quantityPrice);
     $('div#results').show();

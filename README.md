@@ -15,11 +15,11 @@ This site lets the user select quantity, size, and toppings for their pizza. Whe
 
 ## Known Bugs
 
-Currently does not return the correct price, or store more than one toppings value.
+None
 
 ## Support and contact details
 
-Contact marywarrington through github.
+Contact marywarrington at marywarrington@gmail.com.
 
 ## Technologies Used
 

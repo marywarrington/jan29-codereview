@@ -18,10 +18,6 @@ describe('Pizza', function () {
     var testPizza = new Pizza(1, 'large');
     expect(testPizza.sizePrice()).to.equal(5);
   });
-  // it("returns the number of toppings a user has selected", function() {
-  //   var testPizza = new Pizza(1, 'small', ['sausage', 'pineapple', 'hazelnuts']);
-  //   expect(newPizza.toppingsAdded('sausage', 'pineapple', 'hazelnuts', "topping4")).to.equal(4);
-  // });
   it("adds $2 for each topping added", function() {
     var testPizza = new Pizza(1, 'small', ['sausage', 'extra cheese', 'pineapple']);
     expect(testPizza.toppingsPrice('sausage', 'extra cheese', 'pineapple')).to.equal(6);
@@ -37,18 +33,5 @@ describe('Pizza', function () {
   it("returns the price for n number of pizzas ordered", function() {
     var testPizza = new Pizza(3, 'large', ['sausage', 'pineapple']);
     expect(testPizza.quantityPrice()).to.equal(42);
-  });
-});
-
-describe('Order', function() {
-  it("creates and empty array", function() {
-    var testOrder = new Order();
-    expect(testOrder.pizzas).to.eql();
-  });
-  it("adds a pizza to the pizza array", function() {
-    var testOrder = new Order();
-    var pizza1 = new Pizza(1, 'medium', 'sausage');
-    testOrder.prototype.addPizza(pizza1);
-    expect(testOrder.pizzas).to.eql([1, 'medium', 'sausage']);
   });
 });
