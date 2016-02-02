@@ -34,6 +34,10 @@ function Order() {
   var pizzas = [];
 }
 
+Order.prototype.addPizza = function(pizza) {
+  this.pizzas.push(pizza);
+}
+
 // Order.prototype.orderPrice = function() {
 //   var orderTotal = 0;
 //   var pizza = new Pizza(quantity, size, toppings);

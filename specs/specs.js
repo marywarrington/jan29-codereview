@@ -45,9 +45,10 @@ describe('Order', function() {
     var testOrder = new Order();
     expect(testOrder.pizzas).to.eql();
   });
-//   it("returns the full order price", function() {
-//     var testOrder = new Order(["pizza1"]);
-//     var pizza1 = new Pizza(1, 'medium', ['sausage', 'pineapple']);
-//     expect(testOrder.orderPrice()).to.equal(19);
-//   });
+  it("adds a pizza to the pizza array", function() {
+    var testOrder = new Order();
+    var pizza1 = new Pizza(1, 'medium', 'sausage');
+    testOrder.prototype.addPizza(pizza1);
+    expect(testOrder.pizzas).to.eql([1, 'medium', 'sausage']);
+  });
 });
